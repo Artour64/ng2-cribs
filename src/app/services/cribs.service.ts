@@ -10,4 +10,8 @@ export class CribsService {
   getAllCribs(){
     return this.http.get('data/cribs.json');
   }
+
+  addCrib(){
+    
+  }
 }
