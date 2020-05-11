@@ -14,6 +14,9 @@ import { CribsService } from '../services/cribs.service';
 export class CribListingComponent implements OnInit {
 
   //cribs: Array<Crib> = cribs;
+  sortFields: Array<string> = ["price","bedrooms","bathrooms",'area'];
+  sortField: string = 'price';
+  sortDirection: string= 'asc';
   cribs: Array<Crib>;
   error: string;
 
@@ -31,7 +34,11 @@ export class CribListingComponent implements OnInit {
       error => this.error=error.statusText
     );
 
-    
+    this.cribsService.newCribSubject.subscribe(
+      //data => console.log(data)
+      //data => this.cribs.push(data)
+      data => this.cribs= [data, ...this.cribs]
+    )
   }
 
 }
