@@ -1,12 +1,5 @@
 <div class="row">
     <div *ngFor="let crib of cribs" class="col-sm-4">
-        <div class="img-thumbnail card">
-            <img class="img-thumbnail" src="assets/images/{{ crib.image }}.jpg" alt="">
-            <span class="badge badge-primary">
-                <h5> {{ crib.type }}</h5>
-            </span>
-            <h3> {{ crib.address }}</h3>
-            <h4> {{ crib.price | currency:'USD':true }}</h4>
-        </div>
+        <app-crib-card [crib]="crib"></app-crib-card>
     </div>
 </div>
